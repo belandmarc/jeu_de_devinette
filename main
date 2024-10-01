@@ -1,0 +1,34 @@
+"""
+programme fait par Marc-Aurèle Béland
+groupe 406
+tp2
+jeu de devinette
+"""
+from random import randint
+borne_minimale = 0
+borne_maximale = 1000
+
+
+continuer = True
+chiffre_ordi = 1
+
+votre_chiffre = 0
+
+
+while continuer:
+    chiffre_ordi = randint(borne_minimale, borne_maximale)
+    while chiffre_ordi != votre_chiffre:
+
+        votre_chiffre = int(input('choisir un nombre entre 0 et 1000'))
+        if chiffre_ordi > votre_chiffre:
+            print('le chiffre est plus grand')
+
+        if chiffre_ordi < votre_chiffre:
+            print('le chiffre est plus petit')
+
+    continuer = int(input("Bravo!! voulez-vous continuer\n1 - oui\n2 - non"))
+    if continuer == 1:
+        continuer = True
+    else:
+        continuer = False
+        print('Merci et au revoir…')
